@@ -8,7 +8,7 @@
         Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid>
         <Label Content="Formation" HorizontalAlignment="Left" Margin="242,32,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="cbxFormation" HorizontalAlignment="Left" Margin="348,34,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="cbxFormation" HorizontalAlignment="Left" Margin="348,34,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cbxFormation_SelectionChanged"/>
         <Label Content="All Players" HorizontalAlignment="Left" Margin="56,74,0,0" VerticalAlignment="Top"/>
         <Label Content="Selected Players" HorizontalAlignment="Left" Margin="470,74,0,0" VerticalAlignment="Top"/>
         <ListBox x:Name="lbxAllPlayers" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="56,105,486,97"/>
