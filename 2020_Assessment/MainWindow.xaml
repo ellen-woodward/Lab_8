@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_2020_Assessment"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid>
         <Label Content="Formation" HorizontalAlignment="Left" Margin="242,32,0,0" VerticalAlignment="Top"/>
         <ComboBox x:Name="cbxFormation" HorizontalAlignment="Left" Margin="348,34,0,0" VerticalAlignment="Top" Width="120"/>
