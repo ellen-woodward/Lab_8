@@ -13,10 +13,10 @@
         <Label Content="Selected Players" HorizontalAlignment="Left" Margin="470,74,0,0" VerticalAlignment="Top"/>
         <ListBox x:Name="lbxAllPlayers" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="56,105,486,97"/>
         <ListBox x:Name="lbxSelectedPlayers" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="470,105,83,97"/>
-        <Button x:Name="btnAdd" Content="Add &gt;&gt;" HorizontalAlignment="Center" Margin="0,146,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="btnRemove" Content="&lt;&lt; Remove " HorizontalAlignment="Center" Margin="0,229,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnAdd" Content="Add &gt;&gt;" HorizontalAlignment="Center" Margin="0,146,0,0" VerticalAlignment="Top" Click="btnAdd_Click"/>
+        <Button x:Name="btnRemove" Content="&lt;&lt; Remove " HorizontalAlignment="Center" Margin="0,229,0,0" VerticalAlignment="Top" Click="btnRemove_Click"/>
         <Label Content="Spaces : " HorizontalAlignment="Left" Margin="470,373,0,0" VerticalAlignment="Top"/>
-        <TextBlock x:Name="tbxSpaces" HorizontalAlignment="Left" Margin="535,378,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+        <TextBlock x:Name="tblkSpaces" HorizontalAlignment="Left" Margin="535,378,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="11"/>
 
     </Grid>
 </Window>

@@ -80,8 +80,7 @@ namespace _2020_Assessment
                 };
 
                 players.Add(P);
-            }
-
+            } 
             return players;
         }
 
@@ -89,9 +88,69 @@ namespace _2020_Assessment
         {
             // Create Players
             allPlayers = CreatePlayers();
+            allPlayers.Sort();
 
             // Display in listbox
             lbxAllPlayers.ItemsSource = allPlayers;
+        }
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            // Check space available - can only have 11 selected
+            if (selectedPlayers.Count > 10)
+            {
+                MessageBox.Show("You have too many players selected");
+            }
+            else
+            {
+                // Determine what is selected
+                Player selected = lbxAllPlayers.SelectedItem as Player;
+
+                // Check not null
+                if (selected != null)
+                {
+                    // Take action - move to other list
+                    selectedPlayers.Add(selected);
+                    allPlayers.Remove(selected);
+
+                    selectedPlayers.Sort();
+                    allPlayers.Sort();
+
+                    lbxAllPlayers.ItemsSource = null;
+                    lbxAllPlayers.ItemsSource = allPlayers;
+
+                    lbxSelectedPlayers.ItemsSource = null;
+                    lbxSelectedPlayers.ItemsSource = selectedPlayers;
+
+                    tblkSpaces.Text = (11 - selectedPlayers.Count).ToString();
+                }
+            }
+        }
+           
+
+        private void btnRemove_Click(object sender, RoutedEventArgs e)
+        {
+            // Determine what is selected
+            Player selected = lbxSelectedPlayers.SelectedItem as Player;
+
+            // Check not null
+            if (selected != null)
+            {
+                // Take action - move to other list
+                selectedPlayers.Remove(selected);
+                allPlayers.Add(selected);
+
+                selectedPlayers.Sort();
+                allPlayers.Sort();
+
+                lbxAllPlayers.ItemsSource = null;
+                lbxAllPlayers.ItemsSource = allPlayers;
+
+                lbxSelectedPlayers.ItemsSource = null;
+                lbxSelectedPlayers.ItemsSource = selectedPlayers;
+
+                tblkSpaces.Text = (11 - selectedPlayers.Count).ToString();
+            }
         }
     }
 }

@@ -8,7 +8,7 @@ namespace _2020_Assessment
 {
     public enum Position { Goalkeeper, Defender, Midfielder, Forward }
 
-    internal class Player
+    internal class Player : IComparable
     {
         // Properties
         public string FirstName { get; set; }
@@ -39,6 +39,18 @@ namespace _2020_Assessment
         public override string ToString()
         {
             return $"{FirstName} {Surname} ({Age}) {PreferedPositon.ToString().ToUpper()}";
+        }
+
+        public int CompareTo(object obj)
+        {
+            Player that = obj as Player;
+
+            if (this.PreferedPositon > that.PreferedPositon)
+                return 1;
+            else if (this.PreferedPositon < that.PreferedPositon)
+                return -1;
+            else
+                return this.PreferedPositon.CompareTo(that.PreferedPositon);
         }
     }
 }
